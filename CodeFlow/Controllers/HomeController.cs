@@ -70,5 +70,52 @@ namespace CodeFlow.Controllers
         }
 
 
+        [HttpGet("/exchange/the/authorization/code/for/an/access/token")]
+        public async Task<IActionResult>
+            ExchangeTheAuthorizationCodeForAnAccessToken(
+            string code, string state)
+        {
+            const string Grant_Type = "authorization_code";
+
+            string Token_Endpoint =
+                Configuration["OAuth:Token_Endpoint"];
+            string Redirect_Uri =
+                Configuration["OAuth:Redirect_Uri"];
+            string Client_Id =
+                Configuration["OAuth:Client_Id"];
+            string Client_Secret =
+                Configuration["OAuth:Client_Secret"];
+            string Scope =
+                Configuration["OAuth:Scope"];
+
+            Dictionary<string, string> BodyData =
+                new Dictionary<string, string>
+            {
+                {"grant_type", Grant_Type },
+                {"code", code },
+                {"redirect_uri", Redirect_Uri },
+                {"client_id", Client_Id},
+                {"client_secret", Client_Secret},
+                {"scope", Scope}
+            };
+
+            HttpClient HttpClient = new HttpClient();
+            FormUrlEncodedContent Body = new FormUrlEncodedContent(BodyData);
+
+            HttpResponseMessage Response =
+                await HttpClient.PostAsync(Token_Endpoint, Body);
+            string Status =
+                $"{(int)Response.StatusCode} {Response.ReasonPhrase}";
+
+            JsonElement JsonContent =
+                await Response.Content.ReadFromJsonAsync<JsonElement>();
+
+            string PrettyPrintJsonContent = JsonSerializer.Serialize(JsonContent,
+                new JsonSerializerOptions { WriteIndented = true });
+
+            return View(
+                (Status, PrettyPrintJsonContent, Response.IsSuccessStatusCode));
+        }
+
     }
 }
