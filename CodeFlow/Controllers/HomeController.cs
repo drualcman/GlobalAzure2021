@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
+using System.Net.Http.Headers;
 
 namespace CodeFlow.Controllers
 {
@@ -115,6 +116,46 @@ namespace CodeFlow.Controllers
 
             return View(
                 (Status, PrettyPrintJsonContent, Response.IsSuccessStatusCode));
+        }
+
+        [HttpPost("/call/the/api")]
+        public async Task<IActionResult> CallTheApi(string token)
+        {
+            string AccessToken =
+                JsonDocument.Parse(token).RootElement
+                .GetProperty("access_token").GetString();
+
+            string Api_Endpoint =
+                Configuration["OAuth:Api_Endpoint"];
+
+            HttpClient HttpClient = new HttpClient();
+            HttpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", AccessToken);
+
+            HttpResponseMessage Response = await HttpClient.GetAsync(Api_Endpoint);
+
+            (string Status, string Content) Model;
+            Model.Status = $"{(int)Response.StatusCode} {Response.ReasonPhrase}";
+            if (Response.IsSuccessStatusCode)
+            {
+                JsonElement JsonElement =
+                    JsonSerializer.Deserialize<JsonElement>(
+                        await Response.Content.ReadAsStringAsync());
+
+                Model.Content =
+                    JsonSerializer.Serialize(JsonElement,
+                    new JsonSerializerOptions
+                    {
+                        WriteIndented = true,
+                        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                    });
+            }
+            else
+            {
+                Model.Content =
+                    await Response.Content.ReadAsStringAsync();
+            }
+            return View(Model);
         }
 
     }
