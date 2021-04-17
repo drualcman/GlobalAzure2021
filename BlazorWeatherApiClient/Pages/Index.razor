@@ -1,0 +1,28 @@
+﻿@page "/"
+
+<h3>Paso 1: Obtener el código de autorización</h3>
+<div class="card text-center">
+    <div class="card-header">
+        Obtener el código de autorización
+    </div>
+    <div class="card-body">
+        <p>Code verifier</p>
+        <p class="response-content">
+            @BlazorWeatherAPIClient.Helpers.PKCEHelper.Code_Verifier
+        </p>
+        <p>Code challenge</p>
+        <p class="response-content">
+            @BlazorWeatherAPIClient.Helpers.PKCEHelper.Code_Challenge
+        </p>
+        <p>
+            Este cliente redirige al usuario hacia el servidor
+            de autorización para iniciar sesión y consentir los
+            permisos que le estamos solicitando.
+        </p>
+        <p>
+            <button class="btn btn-primary" @onclick="GetTheCode">
+                Ir al servidor de autorización
+            </button>
+        </p>
+    </div>
+</div>
