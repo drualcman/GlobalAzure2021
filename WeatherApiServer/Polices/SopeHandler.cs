@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WheatherAPI.Polices
+namespace WeatherApiServer.Polices
 {
     public class SopeHandler : AuthorizationHandler<ScopeRequirement>
     {

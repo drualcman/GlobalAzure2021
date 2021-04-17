@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using System;
 
-namespace WheatherAPI.Polices
+namespace WeatherApiServer.Polices
 {
     public class ScopeRequirement : IAuthorizationRequirement
     {
