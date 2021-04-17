@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFlowWithOpenIdConnect",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApi", "WeatherApi\WeatherApi.csproj", "{7B762397-1414-452E-90D6-A7802B5A829C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherClient", "WeatherClient\WeatherClient.csproj", "{FED4540A-2300-441C-AA82-B7398D7EC4AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApiClient", "WeatherApiClient\WeatherApiClient.csproj", "{4377AEA7-59F3-4859-AB78-68459D50A510}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{7B762397-1414-452E-90D6-A7802B5A829C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B762397-1414-452E-90D6-A7802B5A829C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B762397-1414-452E-90D6-A7802B5A829C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FED4540A-2300-441C-AA82-B7398D7EC4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FED4540A-2300-441C-AA82-B7398D7EC4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FED4540A-2300-441C-AA82-B7398D7EC4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FED4540A-2300-441C-AA82-B7398D7EC4AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4377AEA7-59F3-4859-AB78-68459D50A510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4377AEA7-59F3-4859-AB78-68459D50A510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4377AEA7-59F3-4859-AB78-68459D50A510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4377AEA7-59F3-4859-AB78-68459D50A510}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿using CodeFlow.Models;
+﻿using WeatherApiClient.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -12,7 +12,7 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using System.Net.Http.Headers;
 
-namespace CodeFlow.Controllers
+namespace WeatherApiClient.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace CodeFlow.Models
+namespace WeatherApiClient.Models
 {
     public class ErrorViewModel
     {
