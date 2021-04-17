@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Authentication
+@{
+    ViewData["Title"] = "View Authentication Data";
+}
+
+<div class="card">
+    <div class="card-header">
+        Datos del usuario autenticado
+    </div>
+    <div class="card-body">
+        <h2>Claims</h2>
+        <dl>
+            @foreach (var Claim in User.Claims)
+            {
+                <dt>@Claim.Type</dt>
+                <dd>@Claim.Value</dd>
+            }
+        </dl>
+        <h2>Propiedades</h2>
+        <dl>
+            @foreach (var Prop in
+              (await Context.AuthenticateAsync()).Properties.Items)
+            {
+                <dt>@Prop.Key</dt>
+                <dd>@Prop.Value</dd>
+            }
+        </dl>
+    </div>
+</div>

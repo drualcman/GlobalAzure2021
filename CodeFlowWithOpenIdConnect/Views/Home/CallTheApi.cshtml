@@ -1,0 +1,22 @@
+﻿@model (string Status, string Content)
+@{
+    ViewData["Title"] = "Call The API";
+}
+<p>
+    Este es el resultado de la llamada a la API.
+</p>
+<div class="card">
+    <div class="card-header">
+        Respuesta de la API
+    </div>
+    <div class="card-body">
+        Estatus
+        <p class="response-content">
+            @Model.Status
+        </p>
+        Contenido
+        <p class="response-content">
+            @Model.Content
+        </p>
+    </div>
+</div>
