@@ -4,16 +4,6 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.response-content {
-    white-space: pre-line;
-    word-wrap: break-word;
-    background-color: black;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-
 a, .btn-link {
     color: #0366d6;
 }

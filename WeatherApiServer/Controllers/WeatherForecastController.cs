@@ -24,6 +24,7 @@ namespace WeatherApiServer.Controllers
             _logger = logger;
         }
 
+        [Authorize("weatherapi.read")]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

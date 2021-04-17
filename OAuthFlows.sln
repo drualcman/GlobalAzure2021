@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWeatherApiClient", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApiServer", "WeatherApiServer\WeatherApiServer.csproj", "{A8AE5ED8-5D2C-4F87-B5FC-E3DA0F13DFEE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorClientOpenId", "BlazorClientOpenId\BlazorClientOpenId.csproj", "{AAF3F446-A84A-4D37-AB27-E5C0ED613F38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A8AE5ED8-5D2C-4F87-B5FC-E3DA0F13DFEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8AE5ED8-5D2C-4F87-B5FC-E3DA0F13DFEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8AE5ED8-5D2C-4F87-B5FC-E3DA0F13DFEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF3F446-A84A-4D37-AB27-E5C0ED613F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF3F446-A84A-4D37-AB27-E5C0ED613F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF3F446-A84A-4D37-AB27-E5C0ED613F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF3F446-A84A-4D37-AB27-E5C0ED613F38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

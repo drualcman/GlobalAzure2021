@@ -1,0 +1,23 @@
+﻿@page "/exchange/the/code/for/a/token"
+
+<div class="card">
+    <div class="card-header">
+        El Token de Acceso
+    </div>
+    <div class="card-body">
+        <p>Estatus</p>
+        <p class="response-content">@Status</p>
+        <p>Contenido</p>
+        <p class="response-content">@Content</p>
+        @if (IsSuccess)
+        {
+            <p>Ahora podemos invocar a la API</p>
+            <p class="text-center">
+                <a class="btn btn-primary"
+                   href="/call/the/api">
+                    Invocar a la API
+                </a>
+            </p>
+        }
+    </div>
+</div>

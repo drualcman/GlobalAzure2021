@@ -81,7 +81,8 @@ namespace WeatherApiServer
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
